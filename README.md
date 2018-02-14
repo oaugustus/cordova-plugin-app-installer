@@ -2,18 +2,18 @@ App Installer
 ===
 
 
-### Install
+### Instalação
 
 ```
-cordova plugin add https://github.com/simbas/cordova-plugin-app-installer
+cordova plugin add https://github.com/oaugustus/neton-cordova-plugin-app-installer
 ```
 
 
-### How to use
+### Como utilizar
 
 ```javascript
 window.cordova.AppInstaller.downloadAndInstall("http://mydomain.com/myapp.apk", function(){
-	console.log('install ok');
+	console.log('instalação ok ok');
 }, function(err){
 	console.log(err);
 }, function(progressEvent){
@@ -24,14 +24,14 @@ window.cordova.AppInstaller.downloadAndInstall("http://mydomain.com/myapp.apk", 
 });
 ```
 
-### Angular example
+### Exemplo angular
 
 ```javascript
 angular.module('myModule')
     .service('appInstaller', function AppInstaller($window, $log, $q) {
         this.install = function (url) {
             if (!$window.cordova || !$window.cordova.AppInstaller) {
-                $log.error('Cordova app installer plugin not found.');
+                $log.error('Plugin de instalação Cordova não foi encontrado');
                 return ;
             }
             var deferred = $q.defer();
