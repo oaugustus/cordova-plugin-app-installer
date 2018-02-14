@@ -10,10 +10,16 @@ var AppInstaller = function () {
  * @param {string} url URL remota do arquivo apk
  * @param {string} filePath Caminho onde o arquivo apk será salvo local no smartphone
  * @param {function} onFileDownload Função que será executada após o arquivo ser baixado
+ * @param {function} onProgress Função executada durante o progresso do download
  */
-function download(url, filePath, onFileDownload) {
+function download(url, filePath, onFileDownload, onProgress) {
     var fileTransfer = new FileTransfer();
 
+    if (onProgress) {
+    	fileTransfer.onprogress = function(progressEvent) {
+		onProgress(progressEvent);
+	};
+    }	
     fileTransfer.download(
         url,
         filePath,
@@ -53,7 +59,7 @@ AppInstaller.prototype = {
 		var filePath = '///storage/emulated/0/' + dir + '/' + apk;
 		download(url, filePath, function(entry){
 		    exec(success, error, 'AppInstaller', 'install', [entry.fullPath]);
-		});
+		}, onProgress);
 	    }, error);
         }, error);
     }
