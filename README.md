@@ -12,7 +12,7 @@ cordova plugin add https://github.com/oaugustus/neton-cordova-plugin-app-install
 ### Como utilizar
 
 ```javascript
-window.cordova.AppInstaller.downloadAndInstall("http://mydomain.com/myapp.apk", function(){
+window.cordova.AppInstaller.downloadAndInstall("http://mydomain.com/myapp.apk", "localDir","localFile.apk", function(){
 	console.log('instalação ok ok');
 }, function(err){
 	console.log(err);
@@ -22,21 +22,4 @@ window.cordova.AppInstaller.downloadAndInstall("http://mydomain.com/myapp.apk", 
 		console.log(progress);
 	}
 });
-```
-
-### Exemplo angular
-
-```javascript
-angular.module('myModule')
-    .service('appInstaller', function AppInstaller($window, $log, $q) {
-        this.install = function (url) {
-            if (!$window.cordova || !$window.cordova.AppInstaller) {
-                $log.error('Plugin de instalação Cordova não foi encontrado');
-                return ;
-            }
-            var deferred = $q.defer();
-            $window.cordova.AppInstaller.downloadAndInstall(url, deferred.resolve, deferred.reject);
-            return deferred.promise;
-        };
-    });
 ```
