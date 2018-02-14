@@ -1,4 +1,4 @@
-App Installer
+Net On Cordova App Installer
 ===
 
 
