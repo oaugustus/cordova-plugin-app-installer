@@ -1,4 +1,4 @@
-package fr.smile.mobile.appinstaller;
+package br.com.neton.appinstaller;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
