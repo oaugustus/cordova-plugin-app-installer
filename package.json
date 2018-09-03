@@ -1,0 +1,11 @@
+{
+  "name": "neton-cordova-plugin-app-installer",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "neton-cordova-plugin-app-installer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "Plugin cordova que realiza a auto-instalação do aplicativo coletor"
+}
