@@ -12,11 +12,6 @@
                 <param name="android-package" value="br.com.neton.appinstaller.CDVAppInstaller"/>
             </feature>
         </config-file>
-        <config-file parent="app/src/main/" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-            <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
-            <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
-        </config-file>
         <source-file src="src/android/CDVAppInstaller.java" target-dir="src/br/com/neton/appinstaller"/>
     </platform>
 </plugin>
