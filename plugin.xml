@@ -19,5 +19,4 @@
         </config-file>
         <source-file src="src/android/CDVAppInstaller.java" target-dir="src/br/com/neton/appinstaller"/>
     </platform>
-    <dependency id="org.apache.cordova.file-transfer" url="https://github.com/apache/cordova-plugin-file-transfer"/>
 </plugin>
